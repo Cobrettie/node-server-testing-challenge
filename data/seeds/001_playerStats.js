@@ -7,6 +7,8 @@ exports.seed = function(knex) {
       return knex('player_stats').insert([
         {
           id: 1,
+          first_name: 'Cobra',
+          last_name: 'Garner',
           batting_average: 0.500,
           hit: 475,
           at_bat: 950,
@@ -18,6 +20,8 @@ exports.seed = function(knex) {
         },
         {
           id: 2,
+          first_name: 'LynN',
+          last_name: 'Garner',
           batting_average: 0.300,
           hit: 300,
           at_bat: 900,

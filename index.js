@@ -1,7 +1,6 @@
 const express = require('express')
 const cors = require('cors')
-
-// const playerStatsRouter = require('./playerStats/playerStatsRouter')
+const player_stats_router = require('./player_stats/player_stats_router.js')
 
 const server = express()
 const PORT = process.env.PORT || 5000

@@ -44,4 +44,38 @@ router.get('/player/:id', async (req, res) => {
   }
 })
 
+
+// Update individual player stats by id
+router.post('/player/:id', async (req, res) => {
+  try {
+    const updated = PlayerStats.updatePlayerStats(req.params.id, req.body)
+    if (!updated) {
+      res.status(404).json({
+        message: 'Invalid credentials'
+      })
+    }
+    res.status(201).json({
+      message: 'Player stats updated'
+    })
+  } catch(err) {
+    console.log('Error: ', err)
+  }
+})
+
+
+// Delete individual player stats by id
+router.delete('/player/:id', async (req, res) => {
+  try {
+    const removed = await PlayerStats.removePlayerById(req.params.id)
+    if (!removed) {
+      res.status(404).json({ message: 'Invalid credentials' })
+    }
+    res.status(201).json({
+      message: 'Player stats removed'
+    })
+  } catch(err) {
+    console.log('Error: ', err)
+  }
+})
+
 module.exports = router

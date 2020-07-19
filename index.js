@@ -9,12 +9,6 @@ server.use(cors())
 server.use(express.json())
 server.use('/playerstats', player_stats_router)
 
-server.get('/', (req, res) => {
-  res.json({
-    message: 'Welcome to server'
-  })
-})
-
 server.use((err, req, res, next) => {
 	console.log(err)
 	res.status(500).json({

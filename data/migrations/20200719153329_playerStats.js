@@ -1,7 +1,7 @@
 exports.up = async function(knex) {
   await knex.schema.createTable("player stats", table => {
     table.increments() // creates an auto incrementing field named 'id'
-    table.integer('batting average').notNullable
+    table.integer('batting average').notNullable()
     table.integer('hit').notNullable()
     table.integer('at bat').notNullable()
     table.integer('RBI').notNullable()
